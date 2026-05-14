@@ -75,9 +75,9 @@ def show_overview(df, income_median):
 
     col1, col2 = st.columns(2)
     with col1:
-        st.plotly_chart(create_attrition_pie(df), use_container_width=True)
+        st.plotly_chart(create_attrition_pie(df))
     with col2:
-        st.plotly_chart(create_burnout_distribution(df), use_container_width=True)
+        st.plotly_chart(create_burnout_distribution(df))
 
     st.divider()
     st.subheader("⚡ Quick Insights")
@@ -105,31 +105,31 @@ def show_analytics(df):
     with tab1:
         col1, col2 = st.columns(2)
         with col1:
-            st.plotly_chart(create_department_attrition(df), use_container_width=True)
+            st.plotly_chart(create_department_attrition(df))
         with col2:
-            st.plotly_chart(create_overtime_attrition(df), use_container_width=True)
+            st.plotly_chart(create_overtime_attrition(df))
 
         col3, col4 = st.columns(2)
         with col3:
-            st.plotly_chart(create_income_attrition(df), use_container_width=True)
+            st.plotly_chart(create_income_attrition(df))
         with col4:
-            st.plotly_chart(create_age_attrition(df), use_container_width=True)
+            st.plotly_chart(create_age_attrition(df))
 
     with tab2:
         col1, col2 = st.columns(2)
         with col1:
-            st.plotly_chart(create_satisfaction_attrition(df), use_container_width=True)
+            st.plotly_chart(create_satisfaction_attrition(df))
         with col2:
-            st.plotly_chart(create_worklife_attrition(df), use_container_width=True)
+            st.plotly_chart(create_worklife_attrition(df))
 
         try:
             model, feature_names = get_model()
-            st.plotly_chart(create_feature_importance(model, feature_names), use_container_width=True)
+            st.plotly_chart(create_feature_importance(model, feature_names))
         except FileNotFoundError:
             st.warning("Model file not found. Run the notebook first to train and save the model.")
 
     with tab3:
-        st.plotly_chart(create_correlation_heatmap(df), use_container_width=True)
+        st.plotly_chart(create_correlation_heatmap(df))
 
 
 def show_prediction(df, income_median):
@@ -166,7 +166,7 @@ def show_prediction(df, income_median):
             years_since_promotion = st.slider("Years Since Promotion", 0, 15, 1)
             training_times = st.slider("Training Times Last Year", 0, 6, 3)
 
-        submitted = st.form_submit_button("🔍 Predict", use_container_width=True)
+        submitted = st.form_submit_button("🔍 Predict")
 
     if submitted:
         employee_data = {
@@ -276,7 +276,7 @@ def show_recommendations(df, income_median):
         available_cols = [c for c in display_cols if c in high_risk.columns]
         st.dataframe(
             high_risk[available_cols].sort_values('BurnoutScore', ascending=False).head(20),
-            use_container_width=True, height=400
+            height=400
         )
     else:
         st.info("No high-risk employees found.")
@@ -334,3 +334,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

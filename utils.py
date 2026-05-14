@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 from sklearn.preprocessing import LabelEncoder
 
 
@@ -253,3 +252,4 @@ def create_feature_importance(model, feature_names):
     )
     fig.update_layout(height=450, showlegend=False)
     return fig
+
