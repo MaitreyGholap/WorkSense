@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.agents/
+capture_screenshots.py
+*.log
+.env
+.venv/
+venv/
