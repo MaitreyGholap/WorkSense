@@ -2,7 +2,7 @@
 
 An HR analytics platform that identifies employee burnout patterns and predicts attrition risk using data analytics, interactive visualizations, and machine learning.
 
-🔗 **Live Demo:** [worksense.streamlit.app](https://worksense.streamlit.app)
+🔗 **Live Demo:** [worksense.streamlit.app]([https://worksense.streamlit.app](https://worksense-veyfimpyt5rwpd2eqlf2xj.streamlit.app/))
 
 ---
 
